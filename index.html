@@ -94,8 +94,9 @@
     try {
       const base = "https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/weights/";
       statusEl.textContent = "モデル読み込み中…";
-      await faceapi.nets.tinyFaceDetector.loadFromUri(base);
-      await faceapi.nets.faceLandmark68Net.loadFromUri(base);
+      await faceapi.nets.tinyFaceDetector.loadFromUri('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js/models')
+      await faceapi.nets.faceLandmark68Net.loadFromUri('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js/models')
+      await faceapi.nets.faceExpressionNet.loadFromUri('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js/models')
       statusEl.textContent = "モデル準備完了！ カメラを開始するか画像を選択してください。";
       captureBtn.disabled = false;
     } catch (e) {
